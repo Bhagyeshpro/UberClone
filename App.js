@@ -1,12 +1,17 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { Image, StyleSheet, Text, View } from 'react-native';
+import { Provider } from "react-redux"
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Let's build Uber! DEv</Text>
-      <StatusBar style="auto" />
-    </View>
+    <Provider>
+      <View style={styles.container}>
+        <Text>Let's build Uber! DEv</Text>
+        <Image source={{ uri: "https://picsum.photos/seed/picsum/200/300" }} style={styles.image} />
+        <Image source={{ uri: "https://picsum.photos/seed/picsum/200/300" }} style={styles.image} />
+        <StatusBar style="auto" />
+      </View>
+    </Provider>
   );
 }
 
@@ -17,4 +22,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  image: {
+    resizeMode: "cover",
+    width: 200,
+    height: 200
+  }
 });
