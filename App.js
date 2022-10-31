@@ -1,10 +1,11 @@
 import { StatusBar } from 'expo-status-bar';
 import { Image, StyleSheet, Text, View } from 'react-native';
 import { Provider } from "react-redux"
+import { store } from './Store';
 
 export default function App() {
   return (
-    <Provider>
+    <Provider store={store}>
       <View style={styles.container}>
         <Text>Let's build Uber! DEv</Text>
         <Image source={{ uri: "https://picsum.photos/seed/picsum/200/300" }} style={styles.image} />
